@@ -2,7 +2,7 @@
 import mongoose from 'mongoose';
 
 export const connectDatabase = async (): Promise<void> => {
-  const MONGO_URI = 'mongodb://127.0.0.1/usuarios_db';
+  const MONGO_URI = 'mongodb+srv://gabrielwv1095_db_user:U4z0fL80oNlXljXN@cluster0.zqeohap.mongodb.net/?appName=Cluster0';
   try {
     await mongoose.connect(MONGO_URI);
     console.log('🔄 [Database]: Conexión exitosa a MongoDB');
