@@ -28,7 +28,7 @@ module.exports = {
       ref : 'origin/main',
       repo : 'git@github.com:gvidal95/master-dpa-backend.git',
       path : '/var/www/tu-app',
-      'post-deploy' : 'mkdir -p logs && npm install && pm2 reload ecosystem.config.cjs --env production && pm2 save',
+      'post-deploy' : 'mkdir -p logs && npm ci && pm2 reload ecosystem.config.cjs --env production && pm2 save',
       ssh_options: "IdentityFile=~/.ssh/claveIngreso.pem " // Ruta a tu llave .pem local
     }
   }
