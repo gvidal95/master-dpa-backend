@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
     name: "mi-node-app",
-    script: "./index.js",
+    script: "./dist/index.js",
     instances: "max", // Modo Cluster: usa todos los núcleos de la CPU
     exec_mode: "cluster",
 
@@ -28,7 +28,7 @@ module.exports = {
       ref : 'origin/main',
       repo : 'git@github.com:gvidal95/master-dpa-backend.git',
       path : '/var/www/tu-app',
-      'post-deploy' : 'mkdir -p logs && npm ci && pm2 reload ecosystem.config.cjs --env production && pm2 save',
+      'post-deploy' : 'mkdir -p logs && npm ci && npm run build && pm2 reload ecosystem.config.cjs --env production && pm2 save',
       ssh_options: "IdentityFile=~/.ssh/claveIngreso.pem " // Ruta a tu llave .pem local
     }
   }
