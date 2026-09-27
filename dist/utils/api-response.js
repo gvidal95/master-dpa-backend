@@ -1,0 +1,2 @@
+export const sendSuccess = (res, statusCode, data, message = 'Operación realizada correctamente') => res.status(statusCode).json({ success: true, message, data });
+//# sourceMappingURL=api-response.js.map
